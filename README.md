@@ -19,6 +19,25 @@ Add this to your `Cargo.toml`:
 photosi-exceptions-rust = { path = "../photosi-exceptions-rust" }
 ```
 
+Or from git:
+
+```toml
+[dependencies]
+photosi-exceptions-rust = { git = "https://github.com/photosi-it/photosi-exceptions-rust.git" }
+```
+
+### Features
+
+By default, the `serde` feature is enabled for JSON serialization support. If you don't need serialization, you can disable it:
+
+```toml
+[dependencies]
+photosi-exceptions-rust = { git = "https://github.com/photosi-it/photosi-exceptions-rust.git", default-features = false }
+```
+
+Available features:
+- `serde` (default): Enables JSON serialization/deserialization for `PmsResponse` and `Level`
+
 ## Usage
 
 ### Basic exception creation

@@ -1,7 +1,9 @@
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
 /// Exception severity level
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum Level {
     Debug = 0,
     Info = 1,
