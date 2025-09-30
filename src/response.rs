@@ -1,15 +1,17 @@
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
 /// PMS-compatible response structure
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct PmsResponse {
-    #[serde(rename = "ExceptionCode")]
+    #[cfg_attr(feature = "serde", serde(rename = "ExceptionCode"))]
     pub exception_code: String,
 
-    #[serde(rename = "ExceptionDetail")]
+    #[cfg_attr(feature = "serde", serde(rename = "ExceptionDetail"))]
     pub exception_detail: String,
 
-    #[serde(rename = "ExceptionMessage")]
+    #[cfg_attr(feature = "serde", serde(rename = "ExceptionMessage"))]
     pub exception_message: String,
 }
 
