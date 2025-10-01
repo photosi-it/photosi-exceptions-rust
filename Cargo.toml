@@ -1,6 +1,6 @@
 [package]
 name = "photosi-exceptions-rust"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Andrea Nicolini <anicolini@photosi.com>"]
 description = "Shared exception types for Photosi Rust services"
