@@ -3,7 +3,7 @@ use std::error::Error;
 use std::fmt;
 
 /// Base trait for all Photosi exceptions
-pub trait BaseError: Error + Send + Sync {
+pub trait BaseError: Error + Send + Sync + 'static {
     /// Returns the exception code
     fn code(&self) -> &'static str;
 
